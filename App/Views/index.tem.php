@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="App">
+        <h1>Sistema de retiro de asignaturas</h1>
         [@App]
     </div>
     <script src="./app.js"></script>
