@@ -15,11 +15,12 @@
 
     switch ($route) {
         case 'form_retirar':{
-            $layout->set('App', "Formulario de Retiro");
+            $formulario = new App\Lib\template( VIEWS."/form.tem.php");
+            $layout->set('App', $formulario->output());
             break;
         }
         case 'retirar':{
-            $layout->set('App', "Retiro");
+            $layout->set('App', $_POST ? "Retirar" : "Error 404" );
             break;
         }
         default:
