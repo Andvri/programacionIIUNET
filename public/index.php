@@ -23,14 +23,19 @@
             $values = "Acceso Denegado";
             if($_POST){
                 if($_POST['hash'] === HASH){
+                    
                     unset($_POST['hash']);
+                    
                     $table = "";
+                    
                     foreach ($_POST as $key => $value) {
                         $table .= $tem->render("elementtable", [ "key" => $key, "value" => $value]);
                     }
-                    $values = $tem->render('proceso', 
-                    ["table" => $table]
-                );
+
+                    $values = $tem->render(
+                        'proceso', 
+                        ["table" => $table]
+                    );
                     
                 }
                 
@@ -38,9 +43,7 @@
             $App = $values;
             break;
         }
-        default:
-            $layout->set('App', "Error 404");
-            break;
+        
     }
 
 
